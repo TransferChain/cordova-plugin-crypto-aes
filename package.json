@@ -1,0 +1,14 @@
+{
+  "name": "cordova-plugin-crypto-aes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TransferChain native AES for Android and iOS",
+  "license": "MIT",
+  "cordova": {
+    "id": "cordova-plugin-crypto-aes",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
+}

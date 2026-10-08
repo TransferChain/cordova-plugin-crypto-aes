@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-crypto-aes" version="1.0.0">
+    <name>AES</name>
+    <js-module src="www/utils/throw.js" name="utils/throw" />
+    <description>Native AES operations for Android and iOS.</description>
+    <license>MIT</license>
+    <js-module src="www/AES.js" name="AES">
+        <clobbers target="CryptoKit.AES" />
+    </js-module>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AES">
+                <param name="android-package" value="com.transferchain.aes.AES" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/AES.java" target-dir="src/com/transferchain/aes" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AES">
+                <param name="ios-package" value="AES" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/AES.swift" />
+        <framework src="Security.framework" />
+        <framework src="CryptoKit.framework" />
+    </platform>
+</plugin>
